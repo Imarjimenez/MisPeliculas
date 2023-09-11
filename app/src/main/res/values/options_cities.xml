@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="combo_cities">
+        <item>Medellín</item>
+        <item>Bogotá</item>
+        <item>Barranquilla</item>
+        <item>Bucaramanga</item>
+        <item>Cali</item>
+    </string-array>
+
+</resources>
