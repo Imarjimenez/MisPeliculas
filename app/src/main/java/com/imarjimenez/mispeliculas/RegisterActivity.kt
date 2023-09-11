@@ -27,6 +27,9 @@ class RegisterActivity : AppCompatActivity() {
     var text_view_state_cities: TextView ?= null
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
+
+        setTheme(R.style.Apptheme)
+
         super.onCreate(savedInstanceState)
         registerBinding= ActivityRegisterBinding.inflate(layoutInflater)
         val view = registerBinding.root
@@ -70,6 +73,7 @@ class RegisterActivity : AppCompatActivity() {
             registerBinding.spinnerCities.visibility = View.VISIBLE
             registerBinding.femaleRadioButton.visibility = View.VISIBLE
             registerBinding.maleRadioButton.visibility = View.VISIBLE
+            registerBinding.repPasswordEditText.visibility = View.VISIBLE
 
         }
 
@@ -80,6 +84,9 @@ class RegisterActivity : AppCompatActivity() {
             val email: String = registerBinding.emailEditText.text.toString()
             val password: String = registerBinding.passwordEditText.text.toString()
             val repPassword: String = registerBinding.repPasswordEditText.text.toString()
+            val Fecha_nacimiento: String = registerBinding.editTextFecha.text.toString()
+            val ciudad: String = registerBinding.spinnerCities?.selectedItem.toString()
+
 
             // Verificar que ningún campo esté vacío
             if (email.isEmpty() || password.isEmpty() || repPassword.isEmpty()) {
@@ -92,16 +99,17 @@ class RegisterActivity : AppCompatActivity() {
                     val favoritesGenres = mutableListOf<String>()
 
                     if (registerBinding.AmorCheckBox.isChecked) favoritesGenres.add("Amor")
-                    if (registerBinding.SuspensoCheckBox.isChecked) favoritesGenres.add("Suspenso")
+                    if (registerBinding.AccionCheckBox.isChecked) favoritesGenres.add("Acción")
                     if (registerBinding.HumorCheckBox.isChecked) favoritesGenres.add("Humor")
                     if (registerBinding.TerrorCheckBox.isChecked) favoritesGenres.add("Terror")
                     if (registerBinding.AventuraCheckBox.isChecked) favoritesGenres.add("Aventura")
                     if (registerBinding.MusicalCheckBox.isChecked) favoritesGenres.add("Musical")
                     if (registerBinding.DramaCheckBox.isChecked) favoritesGenres.add("Drama")
-                    if (registerBinding.CienciaFiccionCheckBox.isChecked) favoritesGenres.add("Ciencia Ficcion")
+                    if (registerBinding.CrimenCheckBox.isChecked) favoritesGenres.add("Crimen")
                     if (registerBinding.InfantilCheckBox.isChecked) favoritesGenres.add("Infantil")
 
-                    val info = "Email: $email\nGénero: $genre\nGéneros favoritos: ${favoritesGenres.joinToString(", ")}\n"
+                    val info = "Email: $email\nGénero: $genre\nGéneros favoritos: ${favoritesGenres.joinToString(", ")}\ncontraseña: $password\nFecha de nacimiento: $Fecha_nacimiento\nCiudad: $ciudad"
+
 
                     // Mostrar la información en el TextView
                     registerBinding.infoTextView.text = info
@@ -127,6 +135,7 @@ class RegisterActivity : AppCompatActivity() {
         registerBinding.spinnerCities.visibility = View.GONE
         registerBinding.femaleRadioButton.visibility = View.GONE
         registerBinding.maleRadioButton.visibility = View.GONE
+        registerBinding.repPasswordEditText.visibility = View.GONE
         date_picker_fecha?.visibility = View.VISIBLE
 
 

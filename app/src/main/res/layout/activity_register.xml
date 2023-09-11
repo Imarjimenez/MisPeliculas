@@ -20,7 +20,7 @@
             android:layout_marginTop="4dp"
             android:contentDescription="@null"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintHorizontal_bias="0.467"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/logo" />
@@ -39,7 +39,7 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/email_edit_text"
                 android:layout_width="match_parent"
-                android:layout_height="45dp"
+                android:layout_height="60dp"
                 android:hint="@string/email"
                 android:inputType="textEmailAddress"
                 android:textColorHint="#546E7A" />
@@ -59,7 +59,7 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/password_edit_text"
                 android:layout_width="match_parent"
-                android:layout_height="45dp"
+                android:layout_height="60dp"
                 android:hint="@string/password"
                 android:inputType="textPassword"
                 android:textColorHint="#546E7A" />
@@ -79,7 +79,7 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/rep_password_edit_text"
                 android:layout_width="match_parent"
-                android:layout_height="45dp"
+                android:layout_height="60dp"
                 android:hint="@string/rep_password"
                 android:inputType="textPassword" />
         </com.google.android.material.textfield.TextInputLayout>
@@ -142,21 +142,21 @@
 
                 <CheckBox
                     android:id="@+id/Amor_check_box"
-                    android:layout_width="wrap_content"
+                    android:layout_width="50dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="@string/genre_love" />
 
                 <CheckBox
-                    android:id="@+id/Suspenso_check_box"
-                    android:layout_width="wrap_content"
+                    android:id="@+id/Accion_check_box"
+                    android:layout_width="50dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="@string/genre_suspense" />
+                    android:text="@string/genre_accion" />
 
                 <CheckBox
                     android:id="@+id/Humor_check_box"
-                    android:layout_width="wrap_content"
+                    android:layout_width="50dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="@string/genre_humor" />
@@ -168,21 +168,21 @@
 
                 <CheckBox
                     android:id="@+id/Terror_check_box"
-                    android:layout_width="25dp"
-                    android:layout_height="match_parent"
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="@string/genre_terror" />
 
                 <CheckBox
                     android:id="@+id/Aventura_check_box"
-                    android:layout_width="10dp"
+                    android:layout_width="50dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="@string/genre_aventura" />
 
                 <CheckBox
                     android:id="@+id/Musical_check_box"
-                    android:layout_width="wrap_content"
+                    android:layout_width="50dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="@string/genre_musical" />
@@ -194,21 +194,21 @@
 
                 <CheckBox
                     android:id="@+id/Drama_check_box"
-                    android:layout_width="wrap_content"
+                    android:layout_width="50dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="@string/genre_drama" />
 
                 <CheckBox
-                    android:id="@+id/Ciencia_ficcion_check_box"
-                    android:layout_width="wrap_content"
+                    android:id="@+id/Crimen_check_box"
+                    android:layout_width="60dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="@string/genre_ciencia_ficcion" />
+                    android:text="@string/genre_crimen" />
 
                 <CheckBox
                     android:id="@+id/Infantil_check_box"
-                    android:layout_width="wrap_content"
+                    android:layout_width="50dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="@string/genre_infantil" />
@@ -258,7 +258,7 @@
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_marginStart="24dp"
-            android:layout_marginBottom="108dp"
+            android:layout_marginBottom="85dp"
             android:contentDescription="@string/text_input_calendar"
             android:onClick="showCalendar"
             android:visibility="visible"
