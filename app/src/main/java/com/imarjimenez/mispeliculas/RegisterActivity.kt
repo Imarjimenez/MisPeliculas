@@ -5,6 +5,9 @@ import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
+import android.app.DatePickerDialog
+import java.util.Calendar
+import android.view.View
 import androidx.lifecycle.ViewModelProvider
 import com.imarjimenez.mispeliculas.databinding.ActivityRegisterBinding
 
@@ -14,6 +17,7 @@ class RegisterActivity : AppCompatActivity() {
     private lateinit var viewModel: RegisterViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        setTheme(R.style.Apptheme)
         super.onCreate(savedInstanceState)
         registerBinding = ActivityRegisterBinding.inflate(layoutInflater)
         setContentView(registerBinding.root)
@@ -71,5 +75,26 @@ class RegisterActivity : AppCompatActivity() {
             val mensaje = "Registro exitoso."
             Toast.makeText(this, mensaje, Toast.LENGTH_LONG).show()
         }
+    }
+    fun showCalendar(view: View) {
+        // Mostrar un mensaje cuando se presiona el botón de calendario
+        Toast.makeText(this, "Botón de calendario presionado", Toast.LENGTH_SHORT).show()
+
+        val calendar = Calendar.getInstance()
+        val year = calendar.get(Calendar.YEAR)
+        val month = calendar.get(Calendar.MONTH)
+        val day = calendar.get(Calendar.DAY_OF_MONTH)
+
+        val datePickerDialog = DatePickerDialog(this,
+            DatePickerDialog.OnDateSetListener { _, year, monthOfYear, dayOfMonth ->
+                // Aquí puedes hacer algo con la fecha seleccionada
+                // Por ejemplo, mostrarla en un EditText
+                val formattedDate = String.format("%02d/%02d/%04d", dayOfMonth, monthOfYear + 1, year)
+                registerBinding.editTextFecha.setText(formattedDate)
+            }, year, month, day)
+
+        // Mostrar el DatePickerDialog
+        datePickerDialog.show()
+
     }
 }
